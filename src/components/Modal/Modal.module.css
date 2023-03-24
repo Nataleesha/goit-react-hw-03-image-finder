@@ -11,12 +11,7 @@
   z-index: 1200;
 }
 
-.modal {
-  max-width: calc(100vw - 60px);
-  max-height: calc(100vh - 60px);
-  border: 5px solid red;
-}
-
-.modal img {
-  object-fit: contain;
+.modal img{
+  max-width: calc(100vw - 50px);
+  max-height: calc(100vh - 70px);
 }
