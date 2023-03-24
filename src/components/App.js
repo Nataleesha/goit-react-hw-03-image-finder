@@ -25,7 +25,19 @@ class App extends Component {
       `${URL}?q=${query}&page=1&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=12`
     )
       .then((response) => response.json())
-      .then((data) => this.setState({ results: data.hits, status: "idle" }))
+      .then((data) =>
+        this.setState({
+          results: data.hits.map((hit) => {
+            return {
+              id: hit.id,
+              webformatURL: hit.webformatURL,
+              tags: hit.tags,
+              largeImageURL: hit.largeImageURL,
+            };
+          }),
+          status: "idle",
+        })
+      )
       .catch((error) => console.log(error));
   };
 
@@ -38,7 +50,17 @@ class App extends Component {
       .then((data) => {
         if (data.hits.length > 0) {
           this.setState({
-            results: [...this.state.results, ...data.hits],
+            results: [
+              ...this.state.results,
+              ...data.hits.map((hit) => {
+                return {
+                  id: hit.id,
+                  webformatURL: hit.webformatURL,
+                  tags: hit.tags,
+                  largeImageURL: hit.largeImageURL,
+                };
+              }),
+            ],
             page: this.state.page + 1,
             status: "idle",
           });

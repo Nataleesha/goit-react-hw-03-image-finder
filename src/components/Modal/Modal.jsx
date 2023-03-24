@@ -36,10 +36,8 @@ export default class Modal extends Component {
 
 Modal.propTypes = {
   onClose: PropTypes.func.isRequired,
-  src: PropTypes.objectOf(
-    PropTypes.exact({
-      url: PropTypes.string.isRequired,
-      tags: PropTypes.string.isRequired,
-    })
-  ),
+  src: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    tags: PropTypes.string.isRequired,
+  }),
 };

@@ -21,5 +21,5 @@ ImageGalleryItem.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
   bigImg: PropTypes.string.isRequired,
-  onclick: PropTypes.func.isRequired,
+  onclick: PropTypes.func,
 };

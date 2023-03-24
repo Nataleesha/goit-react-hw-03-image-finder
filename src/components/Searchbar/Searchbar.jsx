@@ -20,6 +20,11 @@ export default class Searchbar extends Component {
     }
 
     this.props.onSubmit(this.state.query);
+
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
   };
 
   render() {

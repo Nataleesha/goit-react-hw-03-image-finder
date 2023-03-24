@@ -19,7 +19,7 @@ export const ImageGallery = ({ gallery, onClick }) => {
 };
 
 ImageGallery.propTypes = {
-  gallery: PropTypes.objectOf(
+  gallery: PropTypes.arrayOf(
     PropTypes.exact({
       id: PropTypes.number.isRequired,
       webformatURL: PropTypes.string.isRequired,
