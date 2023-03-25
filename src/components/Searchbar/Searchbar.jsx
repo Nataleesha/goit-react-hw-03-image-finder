@@ -23,7 +23,7 @@ export default class Searchbar extends Component {
 
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: "instant",
     });
   };
 
